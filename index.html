@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Pizza Calculator</title>
+  <style>
+  body{background-color:  #212f3c }
+    .button{padding: 10px; background-color:#212f3c  ; border: none; color:#fff;height:40px;width:18%;margin: 0px;}
+    .button:hover{padding: 10px; background-color: #fff ; border: 2px solid  #212f3c; color: #212f3c;}
+    #display{height:40px; width:80%}
+    form{
+      background-color: #f8f8f8;
+      border: 2px solid #f8f8f8;
+      padding: 10px; padding-bottom: 40px; margin-top: 50px;
+    }
+  </style>
+</head>
+<body class="container">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 text-center">
+  <form id="myForm">
+    <fieldset>
+      <legend>LoL Calculator</legend>
+    <div id="displays" class="col-md-12">
+      <input type="text" id="display" value="">
+      <input type="button" id="clear" class="btn btnmd button " value="C" onclick="clear()">
+    </div>
+    <div class="col-md-12" style="margin-top:10px;">
+      <div class="text-center">
+        <input type="button" id="trig" class="btn btnmd button " value="sin(" onclick="addValues('Math.sin(')">
+        <input type="button" id="trig" class="btn btnmd button " value="cos(" onclick="addValues('Math.cos(')">
+        <input type="button" id="trig" class="btn btnmd button " value="tan(" onclick="addValues('Math.tan(')">
+        <input type="button" id="keys" class="btn btnmd button " value=")" onclick="addValues(')')">
+        <input type="button" id="keys" class="btn btnmd button " value="." onclick="addValues('.')">
+      </div>
+    </div>
+    <div class="col-md-12" style="margin-top:10px;">
+      <div class="text-center">
+        <input type="button" id="keys" class="btn btnmd button " value="7" onclick="addValues('7')">
+        <input type="button" id="keys" class="btn btnmd button " value="8" onclick="addValues('8')">
+        <input type="button" id="keys" class="btn btnmd button " value="9" onclick="addValues('9')">
+        <input type="button" id="keys" class="btn btnmd button " value="+" onclick="addValues('+')">
+        <input type="button" id="keys" class="btn btnmd button " value="-" onclick="addValues('-')">
+      </div>
+    </div>
+    <div class="col-md-12" style="margin-top:10px;">
+      <div class="text-center">
+        <input type="button" id="keys" class="btn btnmd button " value="4" onclick="addValues('4')">
+        <input type="button" id="keys" class="btn btnmd button " value="5" onclick="addValues('5')">
+        <input type="button" id="keys" class="btn btnmd button " value="6" onclick="addValues('6')">
+        <input type="button" id="keys" class="btn btnmd button " value="/" onclick="addValues('/')">
+        <input type="button" id="keys" class="btn btnmd button " value="*" onclick="addValues('*')">
+      </div>
+    </div>
+    <div class="col-md-12" style="margin-top:10px;">
+      <div class="text-center">
+        <input type="button" id="keys" class="btn btnmd button " value="1" onclick="addValues('1')">
+        <input type="button" id="keys" class="btn btnmd button " value="2" onclick="addValues('2')">
+        <input type="button" id="keys" class="btn btnmd button " value="3" onclick="addValues('3')">
+        <input type="button" id="keys" class="btn btnmd button " value="0" onclick="addValues('0')">
+        <input type="button" id="equal" class="btn btnmd button " value="=">
+      </div>
+    </div>
+
+
+  </fieldset>
+  </form>
+</div>
+
+<script>
+var display = document.getElementById("display").value;
+
+function addValues(val){
+  document.getElementById("display").value+=val;
+}
+
+var clear = document.getElementById("clear");
+
+clear.addEventListener("click", function(){
+  document.getElementById("display").value = "";
+})
+
+
+var equal = document.getElementById("equal");
+
+equal.addEventListener("click", function(){
+   var ans = eval(document.getElementById("display").value);
+   document.getElementById("display").value = ans;
+});
+
+
+
+
+</script>
+
+</body>
+</html>
